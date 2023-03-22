@@ -1,0 +1,24 @@
+{% extends "model-page.html" %}
+
+
+{% block content %}
+     <ul style="font-size: 18px">
+        <div class="w3-container w3-teal">
+            <h2>Cadastramentos</h2>
+        </div>
+         <a href="funcionario/">
+            <button type="button">Novo Funcionário</button>
+         </a>
+
+            {% for cadastro in cadastros %}
+                <li>
+                    {{ cadastro.Nome }} - {{ cadastro.Idade }} - {{ cadastro.Telefone }}
+                    <br>
+                    <a href="/cadastro/funcionario/?id={{ cadastro.id }}"><button type="submit">Editar</button></a>
+                     <a href="/delete/{{cadastro.id}}"><button type="submit">Excluir</button></a>
+                </li>
+
+            {% endfor %}
+    </ul>
+
+{% endblock %}

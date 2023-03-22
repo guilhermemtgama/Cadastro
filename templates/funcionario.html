@@ -1,0 +1,25 @@
+{% extends "model-page.html" %}
+
+{% block content %}
+
+<h2>Funcionario</h2>
+<form action="submit" method="POST">{% csrf_token %}
+    <label>Nome</label>
+    <input type="number" name="id_funcionario" value="{{ funcionario.id }}" hidden>
+    <br>
+    <input type="text" name="Nome" value="{{funcionario.Nome}}">
+    <br>
+    <label>Idade</label>
+    <br>
+    <input type="text" name="Idade"  value="{{funcionario.Idade}}">
+    <br>
+    <label>Telefone</label>
+    <br>
+    <input type="text" name="Telefone"  value="{{funcionario.Telefone}}">
+    <br><br>
+    <button type="submit">Salvar</button>
+    <a href="/">
+        <button type="button">Cancelar</button>
+    </a>
+</form>
+{% endblock%}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+</head>
+<body style="background-color: #FAFAFA; font-family: 'Nunito Sans', sans-serif; padding-top: 50px;
+ max-width: 500px; margin: auto; -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21 );
+ -moz-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21 );" >
+    <div align="center">
+        <h1>Login</h1>
+    </div>
+        <form action="submit" method="POST">{% csrf_token %}
+            <div align="center">
+                <label>Usuário: </label>
+                <br>
+                <input type="text" name="username">
+                <br>
+                <label>Password:</label>
+                <br>
+                <input type="password" name="password">
+                <br>
+                <br>
+                <button type="submit">Entrar</button>
+            </div>
+        </form>
+        {% for message in messages %}
+    <div align="center">
+            <strong>Erro: </strong>{{ message }}
+        {% endfor %}
+    </div>
+</body>
+</html>
